@@ -1,20 +1,30 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Tienda de Café</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <ion-card *ngFor="let producto of productos">
+    <ion-img [src]="producto.imagen"></ion-img>
+    
+    <ion-card-header>
+      <ion-card-title>{{ producto.nombre }}</ion-card-title>
+    </ion-card-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-card-content>
+      <p>{{ producto.descripcion }}</p>
+      <h3>${{ producto.precio }}</h3>
+
+      <ion-button fill="outline" color="primary" (click)="agregarAlCarrito(producto)">
+        <ion-icon [icon]="cartIcon" slot="start"></ion-icon>
+        Agregar al carrito
+      </ion-button>
+
+      <ion-button fill="clear" color="danger" (click)="meGusta(producto)">
+        <ion-icon [icon]="heartIcon"></ion-icon>
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+

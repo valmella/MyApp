@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Café Selecto</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="'/about'">About</ion-button>
+      <ion-button [routerLink]="'/login'">Login</ion-button>
+      <ion-button [routerLink]="'/register'">Register</ion-button>
+      <ion-button [routerLink]="'/profile'">Profile</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-text color="medium">
+    <h2>¡Bienvenido!</h2>
+    <p>En CafetalApp podrás encontrar los mejores cafés de especialidad de todo el mundo.</p>
+  </ion-text>
+
+  <div class="productos-container">
+    <ion-card *ngFor="let producto of productos">
+      <ion-img [src]="producto.imagen" class="card-img"></ion-img>
+      <ion-card-header>
+        <ion-card-title>{{ producto.nombre }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{ producto.descripcion }}</p>
+        <p><strong>${{ producto.precio }}</strong></p>
+        <ion-button fill="clear" (click)="meGusta(producto)">
+          <ion-icon [icon]="heartIcon" slot="icon-only"></ion-icon>
+        </ion-button>
+        <ion-button fill="solid" (click)="agregarAlCarrito(producto)">
+          <ion-icon [icon]="cartIcon" slot="start"></ion-icon>
+          Comprar ahora
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

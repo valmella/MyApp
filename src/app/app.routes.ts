@@ -34,6 +34,7 @@ export const routes: Routes = [
   },
   {
     path: 'contacto',
-    loadComponent: () => import('./pages/contacto/contacto.page').then((m) => m.ContactoPage),
-  },
+    loadComponent: () =>
+       import('./pages/contacto/contacto.page').then((m) => m.ContactoPage),
+  }
 ];

@@ -1,0 +1,40 @@
+.about-content {
+  background-color: #ffffff;
+
+  .coffee-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .info-card {
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    ion-card-header {
+      background-color: #f8f4f1;
+      border-bottom: 1px solid #ddd;
+
+      ion-card-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #5a3e2b; // Color café
+      }
+    }
+
+    ion-card-content {
+      font-size: 0.95rem;
+      color: #333;
+      line-height: 1.5;
+    }
+  }
+
+  ion-button {
+    margin-top: 24px;
+    font-weight: 500;
+  }
+}

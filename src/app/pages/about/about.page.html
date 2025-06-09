@@ -1,12 +1,42 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title #title>About</ion-title>
+  <ion-toolbar color="light">
+    <ion-title>CafetalApp</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <p>CafetalApp es una aplicación dedicada a los amantes del café de especialidad. En ella puedes descubrir, conocer y comprar cafés selectos de distintas regiones del mundo, con descripciones detalladas y precios actualizados. Nuestra misión es acercarte las mejores experiencias cafeteras directamente a tu hogar, ofreciendo calidad y pasión en cada taza.</p>
-  <ion-button #pulseBtn expand="block" routerLink="/home">
-    Volver a Home
+<ion-content class="about-content ion-padding">
+
+  <ion-img 
+  class="coffee-img" 
+  src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80" 
+  alt="Café de especialidad">
+ </ion-img>
+
+  <ion-card class="info-card">
+    <ion-card-header>
+      <ion-card-title>Bienvenido a CafetalApp</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      CafetalApp es una aplicación creada en 2025 para los amantes del café de especialidad.
+      Descubre, conoce y compra cafés selectos de distintas regiones del mundo, con descripciones detalladas y precios actualizados.
+      Nuestra misión es acercarte las mejores experiencias cafeteras directamente a tu hogar, ofreciendo calidad y pasión en cada taza.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="info-card">
+    <ion-card-header>
+      <ion-card-title>¿Qué es el café de especialidad?</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Es un tipo de café de alta calidad cultivado en condiciones ideales, recolectado cuidadosamente y procesado con altos estándares.
+      Se diferencia del café comercial por su sabor, aroma y trazabilidad. Para ser considerado de especialidad, debe obtener al menos 80 puntos según la SCA.
+      <br><br>
+      Proviene de regiones con condiciones únicas, se tuesta con precisión y se prepara con métodos que conservan su perfil sensorial.
+      El consumidor valora la calidad, el origen y la historia detrás del grano.
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-button expand="block" color="tertiary" (click)="goHome()">
+  Volver a Home
   </ion-button>
-</ion-content>

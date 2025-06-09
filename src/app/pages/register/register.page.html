@@ -4,6 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content class="ion-padding">
   <form (ngSubmit)="register()">
     <ion-item>
@@ -18,6 +19,11 @@
 
     <ion-item>
       <ion-label position="floating">Contraseña</ion-label>
+      <ion-input [(ngModel)]="password" type="password" name="password" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Repetir Contraseña</ion-label>
       <ion-input [(ngModel)]="password" type="password" name="password" required></ion-input>
     </ion-item>
 

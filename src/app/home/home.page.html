@@ -5,26 +5,38 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-card *ngFor="let producto of productos">
-    <ion-img [src]="producto.imagen"></ion-img>
-    
-    <ion-card-header>
-      <ion-card-title>{{ producto.nombre }}</ion-card-title>
-    </ion-card-header>
 
-    <ion-card-content>
-      <p>{{ producto.descripcion }}</p>
-      <h3>${{ producto.precio }}</h3>
+   
+  <ion-searchbar
+    [(ngModel)]="textoBuscar"
+    (ionInput)="filtrarProductos()"
+    placeholder="Buscar café..."
+    showCancelButton="focus"
+  ></ion-searchbar>
 
-      <ion-button fill="outline" color="primary" (click)="agregarAlCarrito(producto)">
-        <ion-icon [icon]="cartIcon" slot="start"></ion-icon>
-        Agregar al carrito
-      </ion-button>
+   
+  <p style="text-align:center; font-weight:bold;">Estoy en Home</p>
 
-      <ion-button fill="clear" color="danger" (click)="meGusta(producto)">
-        <ion-icon [icon]="heartIcon"></ion-icon>
-      </ion-button>
-    </ion-card-content>
-  </ion-card>
+   
+  <div class="productos-container">
+    <ion-card *ngFor="let producto of productosFiltrados">
+      <ion-img [src]="producto.imagen"></ion-img>
+      <ion-card-header>
+        <ion-card-title>{{ producto.nombre }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{ producto.descripcion }}</p>
+        <h3>${{ producto.precio }}</h3>
+
+        <ion-button fill="outline" color="primary" (click)="agregarAlCarrito(producto)">
+          <ion-icon [icon]="cartIcon" slot="start"></ion-icon>
+          Agregar al carrito
+        </ion-button>
+
+        <ion-button fill="clear" color="danger" (click)="meGusta(producto)">
+          <ion-icon [icon]="heartIcon"></ion-icon>
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
-

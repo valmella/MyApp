@@ -1,3 +1,19 @@
+.titulo-centrado {
+  text-align: center;
+  margin-bottom: 1rem;
+
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3e3e3e;
+  }
+
+  p {
+    font-size: 16px;
+    color: #666;
+  }
+}
+
 .productos-container {
   display: flex;
   flex-direction: row;
@@ -16,4 +32,17 @@
   height: 180px;
   object-fit: cover;
   border-radius: 10px;
+}
+
+ion-searchbar {
+  display: block;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 500px;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-buttons ion-button {
+  margin-left: 8px;
 }

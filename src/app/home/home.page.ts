@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import {
   IonHeader, IonToolbar, IonTitle, IonContent,
   IonCard, IonCardHeader, IonCardTitle, IonCardContent,
-  IonButton, IonImg, IonIcon
+  IonButton, IonImg, IonIcon, IonSearchbar
 } from '@ionic/angular/standalone';
+import { FormsModule } from '@angular/forms';
 import { heartOutline, cartOutline } from 'ionicons/icons';
 
 @Component({
@@ -12,7 +13,8 @@ import { heartOutline, cartOutline } from 'ionicons/icons';
   imports: [
     IonHeader, IonToolbar, IonTitle, IonContent,
     IonCard, IonCardHeader, IonCardTitle, IonCardContent,
-    IonButton, IonImg, IonIcon
+    IonButton, IonImg, IonIcon, IonSearchbar,
+    FormsModule
   ],
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
@@ -20,6 +22,8 @@ import { heartOutline, cartOutline } from 'ionicons/icons';
 export class HomePage {
   heartIcon = heartOutline;
   cartIcon = cartOutline;
+
+  textoBuscar: string = '';
 
   productos = [
     {
@@ -42,12 +46,41 @@ export class HomePage {
       descripcion: 'Intenso, con notas a frutos del bosque y cuerpo medio.',
       precio: 9500,
       imagen: 'assets/img/kenya.jpg',
+    },
+    {
+      id: 4,
+      nombre: 'Café Colombia Huila',
+      descripcion: 'Dulce, acidez media, notas de panela y frutas rojas.',
+      precio: 8200,
+      imagen: 'assets/img/colombia.jpg',
+    },
+    {
+      id: 5,
+      nombre: 'Café Colombia Huila',
+      descripcion: 'Dulce, acidez media, notas de panela y frutas rojas.',
+      precio: 8200,
+      imagen: 'assets/img/colombia.jpg',
+    },
+    {
+      id: 6,
+      nombre: 'Café Colombia Huila',
+      descripcion: 'Dulce, acidez media, notas de panela y frutas rojas.',
+      precio: 8200,
+      imagen: 'assets/img/colombia.jpg',
     }
   ];
 
+  productosFiltrados = [...this.productos];
+
+  filtrarProductos() {
+    const texto = this.textoBuscar.toLowerCase();
+    this.productosFiltrados = this.productos.filter(producto =>
+      producto.nombre.toLowerCase().includes(texto)
+    );
+  }
+
   agregarAlCarrito(producto: any) {
     console.log('Agregado al carrito:', producto.nombre);
-    // Aquí puedes implementar localStorage o navegación
   }
 
   meGusta(producto: any) {
